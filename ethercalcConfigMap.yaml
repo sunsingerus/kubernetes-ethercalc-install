@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ethercalc-config
+data:
+  TITLE: "ISPRASEthercalc"
+  SKIN_NAME: "colibris"
+  DEFAULT_PAD_TEXT: "Welcome to ISPRAS"
+  TRUST_PROXY: "true"
+  
