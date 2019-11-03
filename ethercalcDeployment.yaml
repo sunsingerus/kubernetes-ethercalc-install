@@ -7,9 +7,9 @@ metadata:
 spec:
   containers:
     - name: ethercalc
-      image: ethercalc/ethercalc
+      image: audreyt/ethercalc
       ports:
-        - containerPort: 9001
+        - containerPort: 8000
       envFrom:
         - configMapRef:
             name: ethercalc-config
@@ -21,6 +21,14 @@ spec:
 #        httpGet:
 #          path: /
 #          port: 80
+    - name: redis
+      image: redis
+      command:
+        - "redis-server"
+        - "--appendonly"
+        - "yes"
+      ports:
+        - containerPort: 6379
     - name: sh
       image: busybox
       command:
